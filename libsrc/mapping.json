@@ -1,0 +1,10 @@
+{
+  "maps": {
+    "copy": [
+      {
+        "src": "./README.md",
+        "dest": "./dist/README.md"
+      }
+    ]
+  }
+}

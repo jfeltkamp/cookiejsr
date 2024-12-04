@@ -1,14 +1,19 @@
 {
     "name": "jfeltkamp/cookiesjsr",
     "type": "drupal-library",
-    "description": "Cookie consent tool.",
-    "license": "GPL-2.0-or-later",
-    "keywords": [
+    "description": "COOKiES JSR is a consent management tool and provides UI and API to manage 3rd party services within the GDPR.",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+      {
+        "name": "Joachim Feltkamp",
+        "homepage": "https://www.drupal.org/u/jfeltkamp"
+      }
     ],
+    "keywords": ["cookie compliance", "data privacy", "data protection", "third party", "personal data", "compliance tool", "personal information", "cookies", "user", "consent", "LGPD", "GDPR", "DSGVO", "CCPA", "EU", "Europe", "legal", "onetrust", "open source"],
     "homepage": "https://github.com/jfeltkamp/cookiesjsr",
     "minimum-stability": "dev",
     "support": {
         "issues": "https://github.com/jfeltkamp/cookiesjsr/issues",
-        "source": "https://github.com/jfeltkamp/cookiesjsr.git"
+        "source": "https://github.com/jfeltkamp/cookiesjsr"
     }
 }

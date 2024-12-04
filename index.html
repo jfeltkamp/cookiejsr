@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Svelte</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+
+    <div class="container">
+      <h1 class="display-4">Svelte COOKiES</h1>
+
+      <div class="my-5">
+        <a href="#editCookieSettings" class="btn btn-primary">Open cookie settings by Hash</a>
+      </div>
+
+      <div class="my-5">
+        <h2 class="display-5">Controls</h2>
+        <p class="lead">Users can edit the COOKiES consent settings from outside the UI. This is useful when a
+          content element is not displayed because consent has not given yet.</p>
+        <div class="btn-group btn-group-lg">
+          <button type="button" class="btn btn-outline-primary" disabled>ALL</button>
+          <button type="button" class="btn btn-info" id="enableAll">ON</button>
+          <button type="button" class="btn btn-warning" id="disableAll">OFF</button>
+        </div>
+      </div>
+
+      <div class="my-5">
+        <p class="lead">Groups</p>
+        <div class="btn-group">
+          <button type="button" class="btn btn-outline-primary" disabled>Group Tracking</button>
+          <button type="button" class="btn btn-info" id="enableAnalytic">ON</button>
+          <button type="button" class="btn btn-warning" id="disableAnalytic">OFF</button>
+        </div>
+      </div>
+
+      <div class="my-5">
+        <p class="lead">Single services</p>
+        <div class="row">
+          <div class="col-lg-3 col-sm-6">
+            <div class="btn-group btn-group-sm">
+              <button type="button" class="btn btn-outline-primary" disabled>Analytics</button>
+              <button type="button" class="btn btn-info" id="enableAnalytics">ON</button>
+              <button type="button" class="btn btn-warning" id="disableAnalytics">OFF</button>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="btn-group btn-group-sm">
+              <button type="button" class="btn btn-outline-primary" disabled>GoogleTag</button>
+              <button type="button" class="btn btn-info" id="enableGtag">ON</button>
+              <button type="button" class="btn btn-warning" id="disableGtag">OFF</button>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="btn-group btn-group-sm">
+              <button type="button" class="btn btn-outline-primary" disabled>Facebook</button>
+              <button type="button" class="btn btn-info" id="enableFacebook">ON</button>
+              <button type="button" class="btn btn-warning" id="disableFacebook">OFF</button>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="btn-group btn-group-sm">
+              <button type="button" class="btn btn-outline-primary" disabled>Youtube</button>
+              <button type="button" class="btn btn-info" id="enableYoutube">ON</button>
+              <button type="button" class="btn btn-warning" id="disableYoutube">OFF</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="display-5">Services Status</h2>
+      <p class="lead">
+        This panel represents the current state of your 3-rd party services.
+      </p>
+      <div class="row">
+        <div class="col-md-6 analytics plugin" id="analytics"></div>
+        <div class="col-md-6 gtag plugin" id="gtag"></div>
+        <div class="col-md-6 facebook plugin" id="facebook"></div>
+        <div class="col-md-6 youtube plugin" id="youtube"></div>
+      </div>
+
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script type="application/javascript" src="/js/gdpr-listener.js"></script>
+    <div id="cookiesjsr"></div>
+    <!-- built files will be auto injected -->
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"cookiesjsr":{"config":{"cookie":{"name":"cookiesjsr","expires":31536000000,"domain":"","sameSite":"Lax","secure":false},"library":{"libBasePath":"","libPath":"","scrollLimit":0},"callback":{"method":"get","url":"/cookies/consent/callback.json","headers":[]},"interface":{"openSettingsHash":"#editCookieSettings","showDenyAll":true,"denyAllOnLayerClose":false,"settingsAsLink":false,"availableLangs":["en"],"defaultLang":"en","groupConsent":false,"cookieDocs":true}},"services":{"default":{"id":"default","services":[{"key":"base","type":"default","name":"Required cookies","info":{"value":"<table><thead><tr><th width=\"15%\">Cookie name</th><th width=\"15%\">Default expiration time</th><th>Description</th></tr></thead><tbody><tr><td><code dir=\"ltr\" translate=\"no\">SSESS&lt;ID&gt;</code></td><td>1 month</td><td>If you are logged in to this website, a session cookie is required to identify and connect your browser to your user account in the server backend of this website.</td></tr><tr><td><code dir=\"ltr\" translate=\"no\">cookiesjsr</code></td><td>1 year</td><td>When you visited this website for the first time, you were asked for your permission to use several services (including those from third parties) that require data to be saved in your browser (cookies, local storage). Your decisions about each service (allow, deny) are stored in this cookie and are reused each time you visit this website.</td></tr></tbody></table>","format":"full_html"},"uri":"","needConsent":false}],"weight":1},"tracking":{"id":"tracking","services":[{"key":"analytics","type":"tracking","name":"Google Analytics","info":{"format":"full_html","value":""},"uri":"https://support.google.com/analytics/answer/6004245","needConsent":true},{"key":"gtag","type":"tracking","name":"Google Tag Manager","info":{"format":"full_html","value":""},"uri":"https://www.gtag.com/digital/datenschutz-0","needConsent":true}],"weight":10},"social":{"id":"social","services":[{"key":"facebook","type":"social","name":"Facebook","info":{"format":"full_html","value":""},"uri":"https://help.facebook.com/196883487377501","needConsent":true}],"weight":20},"video":{"id":"video","services":[{"key":"youtube","type":"video","name":"Video provided by YouTube","info":{"format":"full_html","value":""},"uri":"https://policies.google.com/privacy","needConsent":true}],"weight":40}},"translation":{"langcode":"en","default_langcode":"en","bannerText":"We use a selection of our own and third-party cookies on the pages of this website: Essential cookies, which are required in order to use the website; functional cookies, which provide better easy of use when using the website; performance cookies, which we use to generate aggregated data on website use and statistics; and marketing cookies, which are used to display relevant content and advertising. If you choose \"ACCEPT ALL\", you consent to the use of all cookies. You can accept and reject individual cookie types and  revoke your consent for the future at any time under \"Settings\".","privacyPolicy":"Privacy policy","privacyUri":"","imprint":"Imprint","imprintUri":"","cookieDocs":"Cookie documentation","cookieDocsUri":"/cookies/documentation","denyAll":"Deny all","settings":"Cookie settings","acceptAll":"Accept all","allowAll":"Accept all","cookieSettings":"Cookie settings","close":"Close","officialWebsite":"View official website","requiredCookies":"Required cookies","readMore":"Read more","allowed":"allowed","denied":"denied","alwaysActive":"Always active","settingsAllServices":"Settings for all services","saveSettings":"Save","credit":"","default":{"title":"What are Cookies?","details":"Cookies are small text files that are placed by your browser on your device in order to store certain information. Using the information that is stored and returned, a website can recognize that you have previously accessed and visited it using the browser on your end device. We use this information to arrange and display the website optimally in accordance with your preferences. Within this process, only the cookie itself is identified on your device. Personal data is only stored following your express consent or where this is absolutely necessary to enable use the service provided by us and accessed by you."},"tracking":{"title":"Tracking cookies","details":"Marketing cookies come from external advertising companies (\"third-party cookies\") and are used to collect information about the websites visited by the user. The purpose of this is to create and display target group-oriented content and advertising for the user."},"social":{"title":"Social Plugins","details":"Comments managers facilitate the filing of comments and fight against spam."},"video":{"title":"Video","details":"Video sharing services help to add rich media on the site and increase its visibility."}}}}</script>
+
+  </body>
+</html>

@@ -1,20 +1,57 @@
 {
   "name": "cookiesjsr",
-  "description": "Cookies JSR. Easy plug-able cookie consent management tool.",
-  "version": "1.0.13",
-  "author": "Joachim Feltkamp <j.feltkamp@gmail.com>",
+  "description": "COOKiES JSR is a consent management tool and provides UI and API to manage 3rd party services within the GDPR.",
+  "version": "2.0.0",
+  "author": {
+    "name": "Joachim Feltkamp",
+    "url": "https://www.drupal.org/u/jfeltkamp",
+    "city": "Hamburg, Germany"
+  },
+  "type": "module",
   "license": "GPL-3.0-or-later",
+  "licenseFullName": "GNU General Public License, version 3 or later",
+  "licenseUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
   "repository": "jfeltkamp/cookiesjsr",
-  "dependencies": {},
-  "files": [
-    "LICENSE.txt",
-    "README.md",
-    "dist/cookiesjsr.min.js",
-    "dist/cookiesjsr.min.css"
-  ],
-  "main": "dist/cookiesjsr.min.js",
+  "homepage": "https://github.com/jfeltkamp/cookiesjsr",
+  "bugs": {
+    "url": "https://github.com/jfeltkamp/cookiesjsr/issues"
+  },
   "scripts": {
-    "lint": "eslint ."
+    "dev": "vite",
+    "build": "vite build && npm run libbuild",
+    "libbuild": "node lib-builder.js",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "cookie compliance",
+    "data privacy",
+    "data protection",
+    "third party",
+    "personal data",
+    "compliance tool",
+    "personal information",
+    "cookies",
+    "user",
+    "consent",
+    "LGPD",
+    "GDPR",
+    "DSGVO",
+    "CCPA",
+    "EU",
+    "Europe",
+    "legal",
+    "onetrust",
+    "open source"
+  ],
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^1.1.0",
+    "sass": "^1.56.1",
+    "svelte": "^3.52.0",
+    "svelte-preprocess-sass": "^2.0.1",
+    "vite": "^3.2.3"
+  },
+  "dependencies": {
+    "buildify": "^0.4.0",
+    "ncp": "^2.0.0"
   }
-  
 }
