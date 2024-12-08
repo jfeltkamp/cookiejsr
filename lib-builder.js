@@ -19,7 +19,7 @@ const combine = {
   js: [
     'dist/index.js',
   ], css: [
-    'dist/main.css',
+    'dist/index.css',
   ]
 }
 
@@ -44,16 +44,6 @@ buildify()
   .wrap('./libsrc/composer.json.tpl', tokens)
   .save('./composer.json');
 
-// Create preloader license.
-buildify()
-  .load('./dist/cookiesjsr-preloader.js')
-  .wrap('./libsrc/license-wrap.tpl', {
-    ...tokens,
-    file_name: 'cookiesjsr-preloader.min.js',
-  })
-  .save('./dist/cookiesjsr-preloader.min.js');
-
-
 // Create LICENSE.txt file with current information.
 buildify()
   .load('./libsrc/LICENSE.txt')
@@ -72,7 +62,7 @@ for (let item of mapping.maps.copy) {
 }
 
 // Remove dev stuff from dist folder.
-const removeFiles = ['dist/index.js', 'dist/main.css', 'dist/cookiesjsr-preloader.js'];
+const removeFiles = ['dist/index.js', 'dist/index.css', 'dist/index.html'];
 for (let srcPath of removeFiles) {
   unlink(srcPath, err => {
     if (err) {

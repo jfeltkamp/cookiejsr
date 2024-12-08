@@ -14,13 +14,9 @@ export default defineConfig({
     assetsInlineLimit: 0,
     sourcemap: false,
     rollupOptions: {
-      input: {
-        index: 'src/main.js',
-        'cookiesjsr-preloader': 'src/preloader.js'
-      },
       output: {
         manualChunks: false,
-        inlineDynamicImports: false,
+        inlineDynamicImports: true,
         entryFileNames: '[name].js',   // currently does not work for the legacy bundle
         assetFileNames: '[name].[ext]', // currently does not work for images
       },

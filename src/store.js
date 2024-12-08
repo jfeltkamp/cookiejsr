@@ -1,4 +1,4 @@
-import {get, writable} from 'svelte/store';
+import { writable } from 'svelte/store';
 import conf from "./services/ConfigService";
 import scs from "./services/StoreCookieService";
 

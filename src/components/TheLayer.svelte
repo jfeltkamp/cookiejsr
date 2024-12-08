@@ -76,7 +76,7 @@
 </script>
 
 <div class="cookiesjsr-layer--wrapper">
-    <div class="cookiesjsr-layer--overlay" title={t('close')} on:click={closeLayer}></div>
+    <button class="cookiesjsr-layer--overlay" title={t('close')} on:click={closeLayer} />
     <div class="cookiesjsr-layer">
         <header class="cookiesjsr-layer--header">
             <span class="cookiesjsr-layer--title">{t('cookieSettings')}</span>
