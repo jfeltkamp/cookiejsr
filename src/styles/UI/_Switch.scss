@@ -1,13 +1,14 @@
+@use "../vars" as v;
 
 .cookiesjsr-switch {
   position: relative;
   margin: 0;
   padding: 0;
   display: block;
-  width: var(--switch-width, $switch-width);
-  height: var(--switch-height, $switch-height);
-  border-radius: var(--switch-height, $switch-height);
-  background-color: var(--switch-bg-off, $color-1);
+  width: var(--switch-width, v.$switch-width);
+  height: var(--switch-height, v.$switch-height);
+  border-radius: var(--switch-height, v.$switch-height);
+  background-color: var(--switch-bg-off, v.$color-1);
   cursor: pointer;
   box-shadow: inset -1px 2px 1px rgba(#000, .25);
   border: 0;
@@ -18,7 +19,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: calc($switch-height/2);
+    border-radius: calc(#{v.$switch-height} / 2);
     border: 1px dotted #eee;
     transform: scale(1.4);
   }
@@ -29,20 +30,20 @@
     top: 0;
     left: 0;
     display: block;
-    width: var(--switch-height, $switch-height);
-    height: var(--switch-height, $switch-height);
-    border-radius: var(--switch-height, $switch-height);
+    width: var(--switch-height, v.$switch-height);
+    height: var(--switch-height, v.$switch-height);
+    border-radius: var(--switch-height, v.$switch-height);
     transform: scale(1.2);
-    background-color: var(--switch-handle-color, $color-1);
-    border: 1px solid var(--switch-border-color, $color-2);
+    background-color: var(--switch-handle-color, v.$color-1);
+    border: 1px solid var(--switch-border-color, v.$color-2);
     transition: left .1s ease-in-out;
     box-shadow: -1px 2px 1px rgba(#000, .25);
   }
 
   &.active {
-    background-color: var(--switch-bg-on, $color-3);
+    background-color: var(--switch-bg-on, v.$color-3);
     &:after {
-      left: $switch-width - $switch-height;
+      left: v.$switch-width - v.$switch-height;
     }
   }
 

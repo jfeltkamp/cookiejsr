@@ -1,3 +1,4 @@
+@use "../../vars" as v;
 
 .cookiesjsr-service-group {
   position: static !important;
@@ -6,7 +7,7 @@
 
   &--tab {
     min-height: 3em;
-    padding: 1em var(--default-margin, $default-margin);
+    padding: 1em var(--default-margin, v.$default-margin);
     display: block;
     width: 100%;
     text-decoration: none;
@@ -15,9 +16,9 @@
     font-weight: 700;
     margin: 0;
     border: 0;
-    color: var(--layer-tab-font-color, $color-5);
-    background: var(--layer-tab-bg-color, $color-1);
-    border-bottom: 1px solid var(--layer-border-color, $color-2);
+    color: var(--layer-tab-font-color, v.$color-5);
+    background: var(--layer-tab-bg-color, v.$color-1);
+    border-bottom: 1px solid var(--layer-border-color, v.$color-2);
     -webkit-appearance: none;
     -moz-appearance: none;
 
@@ -25,14 +26,14 @@
       border-bottom: 0;
     }
 
-    @media (min-width: $md) {
-      padding: 1em #{$default-margin+2em} 1em $default-margin;
+    @media (min-width: v.$md) {
+      padding: 1em #{v.$default-margin+2em} 1em v.$default-margin;
       width: calc(30% + 2em);
     }
   }
   &--content {
     display: none;
-    @media (min-width: $md) {
+    @media (min-width: v.$md) {
       position: absolute;
       width: 70%;
       height: 100%;
@@ -43,20 +44,20 @@
   }
 
   &--intro {
-    padding: 1em var(--default-margin, $default-margin);
+    padding: 1em var(--default-margin, v.$default-margin);
   }
 
   &.active {
     .cookiesjsr-service-group--tab {
-      color: var(--layer-tab-active-font-color, $color-1);
-      background: var(--layer-tab-active-bg-color, $color-4);
+      color: var(--layer-tab-active-font-color, v.$color-1);
+      background: var(--layer-tab-active-bg-color, v.$color-4);
       border-bottom: 0 none;
     }
 
     .cookiesjsr-service-group--content {
       display: block;
-      color: var(--layer-tab-active-font-color, $color-1);
-      background: var(--layer-tab-active-bg-color, $color-4);
+      color: var(--layer-tab-active-font-color, v.$color-1);
+      background: var(--layer-tab-active-bg-color, v.$color-4);
       font-weight: 500;
     }
   }

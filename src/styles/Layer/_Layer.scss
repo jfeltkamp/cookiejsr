@@ -1,6 +1,8 @@
-@import "Services/ServiceGroups";
-@import "Services/ServiceGroup";
-@import "Services/Service";
+@use "../vars" as v;
+
+@use "Services/ServiceGroups";
+@use "Services/ServiceGroup";
+@use "Services/Service";
 
 .cookiesjsr-layer {
   display: block;
@@ -8,20 +10,20 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: var(--layer-header-bg-color, $color-1);
+  background: var(--layer-header-bg-color, v.$color-1);
   height: 100vh;
   width: 100vw;
   max-width: 100%;
   z-index: 314160;
-  padding: var(--layer-header-height, $layer-header-height) 0 var(--layer-footer-height, $layer-footer-height);
+  padding: var(--layer-header-height, v.$layer-header-height) 0 var(--layer-footer-height, v.$layer-footer-height);
   overflow: hidden;
   line-height: 1.5em;
 
 
-  @media (min-height: $h-sm) { height: 80vh; max-height: 575px}
-  @media (min-height: $h-md) { height: 60vh; }
+  @media (min-height: v.$h-sm) { height: 80vh; max-height: 575px}
+  @media (min-height: v.$h-md) { height: 60vh; }
 
-  @media (min-width: $md) {
+  @media (min-width: v.$md) {
     width: 860px;
   }
 
@@ -33,6 +35,7 @@
     left: 0;
     top: 0;
     background: rgba(0,0,0,0.4);
+    border: 0;
   }
 
   &--header {
@@ -46,14 +49,14 @@
     justify-content: space-between;
     background-color: #FFF;
     margin: 0;
-    background: var(--layer-header-bg-color, $color-1);
-    padding: 0 var(--default-margin, $default-margin);
-    border-bottom: 1px solid var(--layer-border-color, $color-2);
+    background: var(--layer-header-bg-color, v.$color-1);
+    padding: 0 var(--default-margin, v.$default-margin);
+    border-bottom: 1px solid var(--layer-border-color, v.$color-2);
     height: 3.5em;
   }
 
   &--title {
-    color: var(--layer-header-font-color, $color-5);
+    color: var(--layer-header-font-color, v.$color-5);
     text-transform: uppercase;
   }
 
@@ -76,9 +79,9 @@
     position: absolute;
     left: 0;
     right: 0;
-    background: var(--layer-body-bg-color, $color-1);
-    top: var(--layer-header-height, $layer-header-height);
-    bottom: var(--layer-footer-height, $layer-footer-height);
+    background: var(--layer-body-bg-color, v.$color-1);
+    top: var(--layer-header-height, v.$layer-header-height);
+    bottom: var(--layer-footer-height, v.$layer-footer-height);
 
   }
 
@@ -87,36 +90,36 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 0 var(--default-margin, $default-margin);
-    height: var(--layer-footer-height, $layer-footer-height);
+    padding: 0 var(--default-margin, v.$default-margin);
+    height: var(--layer-footer-height, v.$layer-footer-height);
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background: var(--layer-footer-bg-color, $color-1);
-    border-top: 1px solid var(--layer-border-color, $color-2);
+    background: var(--layer-footer-bg-color, v.$color-1);
+    border-top: 1px solid var(--layer-border-color, v.$color-2);
 
-    @media (min-width: $md) {
+    @media (min-width: v.$md) {
       justify-content: space-between;
     }
   }
 
   &--label-all {
-    color: var(--layer-footer-font-color, $color-5);
+    color: var(--layer-footer-font-color, v.$color-5);
     display: none;
-    @media (min-width: $md) {
+    @media (min-width: v.$md) {
       display: block;
       width: 30%;
-      padding-right: var(--default-margin, $default-margin);
+      padding-right: var(--default-margin, v.$default-margin);
     }
   }
 
   &--actions {
     display: flex;
     align-items: center;
-    margin: 0 -#{$default-margin-half};
-    width: calc(100% + #{$default-margin});
-    @media (min-width: $md) {
-      width: calc(70% + #{$default-margin-half});
+    margin: 0 -#{v.$default-margin-half};
+    width: calc(100% + #{v.$default-margin});
+    @media (min-width: v.$md) {
+      width: calc(70% + #{v.$default-margin-half});
     }
   }
 
@@ -126,12 +129,12 @@
     &.allowAll {
       display: none;
 
-      @media (min-width: $sm) {
+      @media (min-width: v.$sm) {
         display: inline-block;
       }
     }
     &.save {
-      @media (max-width: $sm) {
+      @media (max-width: v.$sm) {
         padding: 0 2em;
         width: auto;
         margin-left: auto;

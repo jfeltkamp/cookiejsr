@@ -1,49 +1,50 @@
+@use "../../vars" as v;
 
 .cookiesjsr-service {
   display: flex;
   align-items: center;
-  background-color: rgba($color-2, 0);
+  background-color: rgba(v.$color-2, 0);
   transition: background-color .3s ease;
   &:hover {
-    background-color: rgba($color-2, .1);
+    background-color: rgba(v.$color-2, .1);
   }
 
   &--description {
-    padding: #{$default-margin-half} #{$default-margin};
-    width: calc(100% - #{$default-margin * 2} - #{$switch-width});
+    padding: #{v.$default-margin-half} #{v.$default-margin};
+    width: calc(100% - #{v.$default-margin-doubled} - #{v.$switch-width});
 
     h3 {
       margin: 0;
       font-size: 1.125em;
       font-weight: 400;
-      color: var(--layer-font-light, $color-1);
+      color: var(--layer-font-light, v.$color-1);
     }
   }
 
   &--links {
     a {
-      color: var(--layer-font-light, $color-1);
+      color: var(--layer-font-light, v.$color-1);
       font-size: .75em;
 
       &:hover, &:active, &:visited {
-        color: var(--layer-font-light, $color-1);
+        color: var(--layer-font-light, v.$color-1);
       }
     }
   }
 
   &--action {
-    padding: #{$default-margin-half} #{$default-margin};
-    width: calc(#{$default-margin * 2} + #{$switch-width});
+    padding: #{v.$default-margin-half} #{v.$default-margin};
+    width: calc(#{v.$default-margin-doubled} + #{v.$switch-width});
   }
 
   &--always-on {
-    color: var(--switch-always-on-font-color, $color-3);
+    color: var(--switch-always-on-font-color, v.$color-3);
     text-align: right;
     display: flex;
     justify-content: flex-end;
     white-space: nowrap;
     span {
-      background-color: var(--switch-always-on-bg-color, $color-1);
+      background-color: var(--switch-always-on-bg-color, v.$color-1);
       padding: 0 .5em;
     }
   }

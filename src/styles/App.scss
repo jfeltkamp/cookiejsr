@@ -1,64 +1,64 @@
-@import "./_vars.scss";
-@import './UI/Button';
-@import './UI/Links';
-@import './UI/SetAllServices';
-@import './UI/Switch';
-@import './Banner/Banner';
-@import './Layer/Layer';
+@use "./vars" as v;
+@use './UI/Button';
+@use './UI/Links';
+@use './UI/SetAllServices';
+@use './UI/Switch';
+@use './Banner/Banner';
+@use './Layer/Layer';
 
 #cookiesjsr {
-  --default-margin: #{$default-margin};
-  --font-size-reset: #{$font-size-reset};
+  --default-margin: #{v.$default-margin};
+  --font-size-reset: #{v.$font-size-reset};
 
-  --btn-font-color: #{$color-1};
-  --btn-border-color: #{$color-1};
-  --btn-bg-color: #{$color-4};
-  --btn-prime-font-color: #{$color-4};
-  --btn-prime-border-color: #{$color-1};
-  --btn-prime-bg-color: #{$color-1};
-  --btn-inv-font-color: #{$color-4};
-  --btn-inv-border-color: #{$color-4};
-  --btn-inv-bg-color: #{$color-1};
-  --btn-prime-inv-font-color: #{$color-1};
-  --btn-prime-inv-border-color: #{$color-4};
-  --btn-prime-inv-bg-color: #{$color-4};
+  --btn-font-color: #{v.$color-1};
+  --btn-border-color: #{v.$color-1};
+  --btn-bg-color: #{v.$color-4};
+  --btn-prime-font-color: #{v.$color-4};
+  --btn-prime-border-color: #{v.$color-1};
+  --btn-prime-bg-color: #{v.$color-1};
+  --btn-inv-font-color: #{v.$color-4};
+  --btn-inv-border-color: #{v.$color-4};
+  --btn-inv-bg-color: #{v.$color-1};
+  --btn-prime-inv-font-color: #{v.$color-1};
+  --btn-prime-inv-border-color: #{v.$color-4};
+  --btn-prime-inv-bg-color: #{v.$color-4};
 
-  --link-list-font-color: #{$color-1};
-  --link-list-separator-color: #{$color-1};
+  --link-list-font-color: #{v.$color-1};
+  --link-list-separator-color: #{v.$color-1};
 
   --banner-logo-offset: 100px;
-  --banner-bg-color: #{$color-4};
-  --banner-font-color: #{$color-1};
+  --banner-bg-color: #{v.$color-4};
+  --banner-font-color: #{v.$color-1};
 
-  --layer-header-height: #{$layer-header-height};
-  --layer-header-bg-color: #{$color-1};
-  --layer-header-font-color: #{$color-5};
-  --layer-body-bg-color: #{$color-1};
-  --layer-tab-bg-color: #{$color-1};
-  --layer-tab-font-color: #{$color-5};
-  --layer-tab-active-bg-color: #{$color-4};
-  --layer-tab-active-font-color: #{$color-1};
+  --layer-header-height: #{v.$layer-header-height};
+  --layer-header-bg-color: #{v.$color-1};
+  --layer-header-font-color: #{v.$color-5};
+  --layer-body-bg-color: #{v.$color-1};
+  --layer-tab-bg-color: #{v.$color-1};
+  --layer-tab-font-color: #{v.$color-5};
+  --layer-tab-active-bg-color: #{v.$color-4};
+  --layer-tab-active-font-color: #{v.$color-1};
 
-  --layer-bg-dark: #{$color-4};
-  --layer-font-light: #{$color-1};
-  --layer-font-dark: #{$color-5};
-  --layer-border-color: #{$color-2};
-  --layer-footer-bg-color: #{$color-1};
-  --layer-footer-font-color: #{$color-5};
-  --layer-footer-height: #{$layer-footer-height};
+  --layer-bg-dark: #{v.$color-4};
+  --layer-font-light: #{v.$color-1};
+  --layer-font-dark: #{v.$color-5};
+  --layer-border-color: #{v.$color-2};
+  --layer-footer-bg-color: #{v.$color-1};
+  --layer-footer-font-color: #{v.$color-5};
+  --layer-footer-height: #{v.$layer-footer-height};
 
-  --switch-border-color: #{$color-2};
-  --switch-handle-color: #{$color-1};
-  --switch-bg-off: #{$color-1};
-  --switch-bg-on: #{$color-3};
-  --switch-width: #{$switch-width};
-  --switch-height: #{$switch-height};
-  --switch-always-on-font-color: #{$color-3};
-  --switch-always-on-bg-color: #{$color-1};
+  --switch-border-color: #{v.$color-2};
+  --switch-handle-color: #{v.$color-1};
+  --switch-bg-off: #{v.$color-1};
+  --switch-bg-on: #{v.$color-3};
+  --switch-width: #{v.$switch-width};
+  --switch-height: #{v.$switch-height};
+  --switch-always-on-font-color: #{v.$color-3};
+  --switch-always-on-bg-color: #{v.$color-1};
 }
 
 .cookiesjsr--app {
-  font-size: var(--font-size-reset, $font-size-reset);
+  font-size: var(--font-size-reset, v.$font-size-reset);
 }
 
 body .cookiesjsr--app {

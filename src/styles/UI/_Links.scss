@@ -1,3 +1,5 @@
+@use "../vars" as v;
+
 .cookiesjsr-links {
   list-style: none;
   margin: 0 -.75em;
@@ -7,7 +9,7 @@
 
   &.links--row {
 
-    @media (min-width: $sm) {
+    @media (min-width: v.$sm) {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: left;
@@ -32,7 +34,7 @@
       }
 
 
-      @media (min-width: $sm) {
+      @media (min-width: v.$sm) {
 
         &:before {
           content: '';

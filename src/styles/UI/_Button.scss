@@ -1,14 +1,15 @@
+@use "../vars" as v;
 
 .cookiesjsr-btn {
     cursor: pointer;
     font: inherit;
-    width: calc(100% - #{$default-margin*2});
+    width: calc(100% - #{v.$default-margin-doubled});
     text-transform: uppercase;
     font-size: .85em;
     padding: 0;
     text-decoration: none;
     white-space: nowrap;
-    margin: $default-margin-half;
+    margin: #{v.$default-margin-half};
     opacity: .95;
     transform: scale(1);
     transition: all .3s ease;
@@ -16,11 +17,11 @@
     align-items: center;
     justify-content: center;
     min-height: 42px;
-    color: var(--btn-font-color, $color-1);
-    border: 2px solid var(--btn-border-color, $color-1);
-    background-color: var(--btn-bg-color, $color-4);
+    color: var(--btn-font-color, v.$color-1);
+    border: 2px solid var(--btn-border-color, v.$color-1);
+    background-color: var(--btn-bg-color, v.$color-4);
 
-    @media (min-width: $sm) {
+    @media (min-width: v.$sm) {
         min-height: 48px;
     }
 
@@ -30,20 +31,20 @@
     }
 
     &.invert {
-        color: var(--btn-inv-font-color, $color-4);
-        border-color: var(--btn-inv-border-color, $color-4);
-        background-color: var(--btn-inv-bg-color, $color-1);
+        color: var(--btn-inv-font-color, v.$color-4);
+        border-color: var(--btn-inv-border-color, v.$color-4);
+        background-color: var(--btn-inv-bg-color, v.$color-1);
     }
 
     &.important {
-        color: var(--btn-prime-font-color, $color-4);
-        border-color: var(--btn-prime-border-color, $color-1);
-        background-color: var(--btn-prime-bg-color, $color-1);
+        color: var(--btn-prime-font-color, v.$color-4);
+        border-color: var(--btn-prime-border-color, v.$color-1);
+        background-color: var(--btn-prime-bg-color, v.$color-1);
 
         &.invert {
-            color: var(--btn-prime-inv-font-color, $color-1);
-            border-color: var(--btn-prime-inv-border-color, $color-4);
-            background-color: var(--btn-prime-inv-bg-color, $color-4);
+            color: var(--btn-prime-inv-font-color, v.$color-1);
+            border-color: var(--btn-prime-inv-border-color, v.$color-4);
+            background-color: var(--btn-prime-inv-bg-color, v.$color-4);
         }
     }
 }

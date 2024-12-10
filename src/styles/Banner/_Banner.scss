@@ -1,3 +1,4 @@
+@use "../vars" as v;
 
 .cookiesjsr-banner {
   position: fixed;
@@ -13,9 +14,9 @@
   align-items: center;
 
   padding: 1em;
-  background-color: var(--banner-bg-color, $color-4);
-  color: var(--banner-font-color, $color-1);
-  max-height: calc(100vh - #{$banner-logo-offset});
+  background-color: var(--banner-bg-color, v.$color-4);
+  color: var(--banner-font-color, v.$color-1);
+  max-height: calc(100vh - #{v.$banner-logo-offset});
   overflow: auto;
   transform: translateY(100%);
   transition: transform .3s ease-in-out;
@@ -29,21 +30,21 @@
   }
 
   a {
-    color: var(--link-list-font-color, $color-1);
+    color: var(--link-list-font-color, v.$color-1);
   }
 
   &--info,
   &--action {
     width: 100%;
-    @media (min-width: $md) {
+    @media (min-width: v.$md) {
       width: 50%;
     }
   }
 
   &--info {
-    padding: 0 var(--default-margin, $default-margin);
-    margin-bottom: var(--default-margin, $default-margin);
-    max-height: calc(100vh - 100px - #{$default-margin*2});
+    padding: 0 var(--default-margin, v.$default-margin);
+    margin-bottom: var(--default-margin, v.$default-margin);
+    max-height: calc(100vh - 100px - #{v.$default-margin-doubled});
     overflow: auto;
   }
 
@@ -61,7 +62,7 @@
     flex-direction: column;
     padding: 0;
 
-    @media (min-width: $xl) {
+    @media (min-width: v.$xl) {
       flex-direction: row;
     }
 

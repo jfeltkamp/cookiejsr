@@ -1,9 +1,10 @@
+@use "../vars" as v;
 
 .cookiesjsr-btn {
   &.denyAll {
     display: none;
 
-    @media (min-width: $xl) {
+    @media (min-width: v.$xl) {
       display: inline-block;
     }
   }
