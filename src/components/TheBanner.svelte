@@ -6,25 +6,18 @@
   import {bannerVisible, cookieDocs, settingsAsLink, openSettingsHash, showDenyAll, openLayer} from "../store.js";
 
   function computeLinks() {
-    const links = [
-      {href: t('privacyUri'), title: t('privacyPolicy'), attributes: {target: '_blank'}},
-      {href: t('imprintUri'), title: t('imprint'), attributes: {target: '_blank'}}
-    ];
-    if ($cookieDocs) {
-      links.push({
-        href: t('cookieDocsUri'),
-        title: t('cookieDocs'),
-        attributes: {target: '_blank'},
-      });
+    const links = [];
+    if (!!t('privacyUri').trim()) {
+      links.push({href: t('privacyUri'), title: t('privacyPolicy'), attributes: {target: '_blank'}})
+    }
+    if (!!t('imprintUri').trim()) {
+      links.push({href: t('imprintUri'), title: t('imprint'), attributes: {target: '_blank'}})
+    }
+    if ($cookieDocs && !!t('cookieDocsUri').trim()) {
+      links.push({href: t('cookieDocsUri'), title: t('cookieDocs'), attributes: {target: '_blank'}});
     }
     if ($settingsAsLink) {
-      links.push({
-        href: $openSettingsHash,
-        title: t('settings'),
-        clicked: () => {
-          openLayer();
-        }
-      });
+      links.push({href: $openSettingsHash, title: t('settings'), clicked: () =>  openLayer() });
     }
     return links
   }
@@ -34,7 +27,7 @@
 
 <div class="cookiesjsr-banner { $bannerVisible ? 'active' : ''}">
   <div class="cookiesjsr-banner--info">
-    <span class="cookiesjsr-banner--text">{t('bannerText')}</span>
+    <span class="cookiesjsr-banner--text">{@html t('bannerText')}</span>
     <BaseLinks links={links} classes="cookiesjsr-banner--links" direction="row"/>
   </div>
 

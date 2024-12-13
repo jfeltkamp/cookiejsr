@@ -24,7 +24,7 @@
        aria-labelledby="tab-{ id }"
        hidden="{ id !== $activeGroup }">
     <div class="cookiesjsr-service-group--intro">
-      { t(id + '.details') }
+      {@html t(id + '.details') }
     </div>
     <ul class="cookiesjsr-service-group--services">
       {#if $groupConsent}
