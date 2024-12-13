@@ -291,24 +291,32 @@ ask again if he now wants to activate the service.
 ````js
 var dispatch = {
    extservice: {
-      activate: function() {
-         jQuery('script[data-sid="extservice"]').each(function() {
-            var replacement = jQuery(this).clone().removeAttr('type');
-            jQuery(this).replaceWith(replacement.html());
-         });
+      consentGiven: function() {
+         const scriptTags = document.querySelectorAll('script[data-sid="extservice"]');
+         for (const scriptTag of scriptTags) {
+            const clone = scriptTag.nodeClone(true);
+            clone.removeAttribute('type');
+            scriptTag.parentNode.replaceChild(clone, scriptTag);
+         }
       },
-      fallback: function() {
+      consentDenied: function() {
          // No need.
       }
    },
    youtube: {
-      activate: function() {
-         jQuery('iframe[data-sid="youtube"]').each(function() {
-            jQuery(this).attr('src', jQuery(this).data('src'));
-         });
+      consentGiven: function() {
+         const iFrameTags = document.querySelectorAll('iframe[data-sid="youtube"]');
+         for (const iFrameTag of iFrameTags) {
+            iFrameTag.setAttribute('src', iFrameTag.dataset.src)
+         }
       },
-      fallback: function() {
-         jQuery('iframe[data-sid="youtube"]').parent().prepend(jQuery('<div>Sorry, but YouTube disabled.</div>'))
+      consentDenied: function() {
+         const iFrameTags = document.querySelectorAll('iframe[data-sid="youtube"]');
+         for (const iFrameTag of iFrameTags) {
+            const message = document.createElement("div");
+            message.textContent = 'Sorry, but YouTube is disabled.'
+            iFrameTag.parentNode.preprend(message)
+         }
       }
    }
 }
