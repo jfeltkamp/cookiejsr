@@ -96,19 +96,19 @@ document.cookiesjsr = {
 
 var dispatcher = {
    matomo: {
-      activate: function() {
+      consentGiven: function() {
          // Do stuff to enable Matomo. See best practices below.
       },
-      fallback: function() {
+      consentDenied: function() {
          // Do stuff to fallback. E.g. display layer where the benefits are explained,
          // when Matomo is enabled.
       }
    },
    analytics: {
-      activate: function() {
+      consentGiven: function() {
          // Do stuff to enable Google Analytics. See best practices below.
       },
-      fallback: function() {
+      consentDenied: function() {
          // Do stuff to fallback. E.g. display layer where the benefits are explained,
          // when Google Analytics is enabled.
       }
@@ -126,10 +126,10 @@ document.addEventListener('cookiesjsrUserConsent', function(event) {
    var services = (typeof event.detail.services === 'object') ? event.detail.services : {};
    for (var sid in services) {
       if(typeof dispatcher[sid] === 'object') {
-         if(services[sid] === true && typeof dispatcher[sid].activate === 'function') {
-            dispatcher[sid].activate();
-         } else if(typeof dispatcher[sid].fallback === 'function') {
-            dispatcher[sid].fallback();
+         if(services[sid] === true && typeof dispatcher[sid].consentGiven === 'function') {
+            dispatcher[sid].consentGiven();
+         } else if(typeof dispatcher[sid].consentDenied === 'function') {
+            dispatcher[sid].consentDenied();
          }
       }
    }
