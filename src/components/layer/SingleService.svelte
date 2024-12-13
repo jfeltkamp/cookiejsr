@@ -11,7 +11,7 @@
     if (typeof service.uri !== "undefined" && service.uri)
       links.push({href: service.uri, title: t('officialWebsite')});
     if (service.cookieDocs)
-      links.push({ href: t('cookieDocsUri') + "#" + service.key, title: t('cookieDocs'), attributes: {target: '_blank'} });
+      links.push({ href: t('cookieDocsUri') + "#" + service.key, title: t('cookieDocs'), attributes: {} });
     return links;
   }
   $: links = computeLinks();

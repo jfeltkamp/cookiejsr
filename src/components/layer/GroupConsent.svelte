@@ -23,7 +23,7 @@
     {
       href: t('cookieDocsUri') + '#' + gid,
       title: t('cookieDocs'),
-      attributes: { target: '_blank' },
+      attributes: {},
     },
   ] : [];
   $: groupServices = (

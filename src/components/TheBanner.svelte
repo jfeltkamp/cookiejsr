@@ -8,13 +8,13 @@
   function computeLinks() {
     const links = [];
     if (!!t('privacyUri').trim()) {
-      links.push({href: t('privacyUri'), title: t('privacyPolicy'), attributes: {target: '_blank'}})
+      links.push({href: t('privacyUri'), title: t('privacyPolicy'), attributes: {}})
     }
     if (!!t('imprintUri').trim()) {
-      links.push({href: t('imprintUri'), title: t('imprint'), attributes: {target: '_blank'}})
+      links.push({href: t('imprintUri'), title: t('imprint'), attributes: {}})
     }
     if ($cookieDocs && !!t('cookieDocsUri').trim()) {
-      links.push({href: t('cookieDocsUri'), title: t('cookieDocs'), attributes: {target: '_blank'}});
+      links.push({href: t('cookieDocsUri'), title: t('cookieDocs'), attributes: {}});
     }
     if ($settingsAsLink) {
       links.push({href: $openSettingsHash, title: t('settings'), clicked: () =>  openLayer() });
