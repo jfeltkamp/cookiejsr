@@ -127,7 +127,7 @@
   button {
     &.denyAll,
     &.allowAll {
-      display: none;
+      white-space: wrap;
 
       @media (min-width: v.$sm) {
         display: inline-block;

@@ -2,7 +2,7 @@
 
 .cookiesjsr-btn {
   &.denyAll {
-    display: none;
+    white-space: wrap;
 
     @media (min-width: v.$xl) {
       display: inline-block;
