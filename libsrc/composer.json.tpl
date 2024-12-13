@@ -7,6 +7,10 @@
       {
         "name": "{{author.name}}",
         "homepage": "{{author.url}}"
+      },
+      {
+        "name": "Jan Stöckler",
+        "homepage": "https://www.drupal.org/u/janstoeckler"
       }
     ],
     "keywords": [{{keywords}}],

@@ -36,7 +36,6 @@ export const closeBanner = () => {
 }
 
 export const setMultipleServices = (payload) => {
-    console.log('setMultipleServices')
     services.update((state) => {
         for (const [key, value] of Object.entries(payload)) {
             state[key] = value;
@@ -46,12 +45,10 @@ export const setMultipleServices = (payload) => {
 }
 
 export const setAllServices = (payload) => {
-    console.log('setAllServices')
     services.set(payload);
 }
 
 export const setService = (key, value) => {
-    console.log('setService')
     services.update((state) => {
         state[key] = value;
         return state;
@@ -61,7 +58,3 @@ export const setService = (key, value) => {
 export const setActiveGroup = (payload) => {
     activeGroup.set(payload);
 }
-
-services.subscribe(value => {
-    console.log('services update: ', value);
-}); // logs '0'
