@@ -3,6 +3,7 @@
   import TheSwitch from "../ui/TheSwitch.svelte";
   import { t } from "../../services/TranslationService.js";
   import {services, cookieDocs, serviceGroups, setMultipleServices} from "../../store.js";
+  import {getLink} from "../../services/helper.js";
 
   export let gid = '';
   export let title = '';
@@ -19,13 +20,9 @@
 
   // 'Computed/reactive' local state
   $: header = gid === 'default' ? 'requiredCookies' : title;
-  $: links = $cookieDocs ? [
-    {
-      href: t('cookieDocsUri') + '#' + gid,
-      title: t('cookieDocs'),
-      attributes: {},
-    },
-  ] : [];
+
+  const cookieDocsLink = getLink(t('cookieDocsUri') + '#' + gid, t('cookieDocs'))
+  $: links = ($cookieDocs && cookieDocsLink) ? [cookieDocsLink] : [];
   $: groupServices = (
           typeof $serviceGroups[gid] === 'object' &&
           typeof $serviceGroups[gid]['services'] === 'object'

@@ -3,15 +3,19 @@
   import BaseLinks from "../ui/BaseLinks.svelte";
   import { t } from "../../services/TranslationService.js";
   import {cookieDocs, services, setService} from "../../store.js";
+  import {getLink} from "../../services/helper.js";
 
   export let service = {};
 
   function computeLinks() {
     const links = [];
-    if (typeof service.uri !== "undefined" && service.uri)
+    if (typeof service.uri !== "undefined" && service.uri) {
       links.push({href: service.uri, title: t('officialWebsite')});
-    if (service.cookieDocs)
-      links.push({ href: t('cookieDocsUri') + "#" + service.key, title: t('cookieDocs'), attributes: {} });
+    }
+    if (service.cookieDocs) {
+      const cookieDocsLink = getLink(t('cookieDocsUri') + '#' + service.key, t('cookieDocs'))
+      if (cookieDocsLink) { links.push(cookieDocsLink); }
+    }
     return links;
   }
   $: links = computeLinks();

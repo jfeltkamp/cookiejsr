@@ -4,18 +4,19 @@
   import SetAllServices from "./ui/SetAllServices.svelte";
   import { t } from "../services/TranslationService.js";
   import {bannerVisible, cookieDocs, settingsAsLink, openSettingsHash, showDenyAll, openLayer} from "../store.js";
+  import { getLink } from "../services/helper.js";
 
   function computeLinks() {
     const links = [];
-    if (!!t('privacyUri').trim()) {
-      links.push({href: t('privacyUri'), title: t('privacyPolicy'), attributes: {}})
-    }
-    if (!!t('imprintUri').trim()) {
-      links.push({href: t('imprintUri'), title: t('imprint'), attributes: {}})
-    }
-    if ($cookieDocs && !!t('cookieDocsUri').trim()) {
-      links.push({href: t('cookieDocsUri'), title: t('cookieDocs'), attributes: {}});
-    }
+    const privacyLink = getLink(t('privacyUri'), t('privacyPolicy'))
+    if (privacyLink) { links.push(privacyLink) }
+
+    const imprintLink = getLink(t('imprintUri'), t('imprint'))
+    if (imprintLink) { links.push(imprintLink) }
+
+    const cookieDocsLink = getLink(t('cookieDocsUri'), t('cookieDocs'))
+    if ($cookieDocs && cookieDocsLink) { links.push(cookieDocsLink) }
+
     if ($settingsAsLink) {
       links.push({href: $openSettingsHash, title: t('settings'), clicked: () =>  openLayer() });
     }
