@@ -8,16 +8,17 @@
   width: 420px;
   height: auto;
   max-width: calc(100vw - 2em);
+  max-height: calc(100vh - 2em);
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  box-shadow: var(--banner-box-shadow, v.$box-shadow);
 
   padding: 1em;
   background-color: var(--banner-bg-color, v.$color-4);
   color: var(--banner-font-color, v.$color-1);
-  max-height: calc(100vh - #{v.$banner-logo-offset});
   overflow: auto;
   transform: translateY(100%);
   transition: transform .3s ease-in-out;
