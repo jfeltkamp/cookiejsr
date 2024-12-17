@@ -2,11 +2,12 @@
 
 .cookiesjsr-banner {
   position: fixed;
-  z-index: 10000;
-  left: 0;
-  bottom: 0;
+  z-index: 100;
+  right: 1em;
+  bottom: 1em;
+  width: 420px;
   height: auto;
-  width: 100vw;
+  max-width: calc(100vw - 2em);
 
   display: flex;
   flex-direction: column;
@@ -25,10 +26,6 @@
     transform: translateY(0);
   }
 
-  @media (min-width: 768px) {
-    flex-direction: row;
-  }
-
   a {
     color: var(--link-list-font-color, v.$color-1);
   }
@@ -36,20 +33,12 @@
   &--info,
   &--action {
     width: 100%;
-    @media (min-width: v.$md) {
-      width: 50%;
-    }
   }
 
   &--info {
-    padding: 0 var(--default-margin, v.$default-margin);
     margin-bottom: var(--default-margin, v.$default-margin);
     max-height: calc(100vh - 100px - #{v.$default-margin-doubled});
     overflow: auto;
-  }
-
-  &--text {
-    display: block;
   }
 
   &--links {
@@ -59,18 +48,20 @@
 
   &--action {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 0;
-
-    @media (min-width: v.$xl) {
-      flex-direction: row;
-    }
-
   }
 
   button {
-    &.denyAll {
+    &.cookiesjsr-settings,
+    &.denyAll,
+    &.allowAll{
       display: inline-block;
+      white-space: wrap;
+      width: auto;
+      padding: 0 .5em;
     }
   }
 
