@@ -23,7 +23,7 @@
     return links
   }
 
-  $: links = computeLinks();
+  const links = computeLinks();
 </script>
 
 <div class="cookiesjsr-banner { $bannerVisible ? 'active' : ''}">

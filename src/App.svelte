@@ -1,7 +1,8 @@
 <script>
   import TheBanner from "./components/TheBanner.svelte";
   import TheLayer from "./components/TheLayer.svelte";
-  import { bannerVisible, layerOpen, openSettingsHash, openLayer } from "./store.js";
+  import debounce from "./services/debounce.js";
+  import { isUpdateRequired, scrollLimit, bannerVisible,  layerOpen, openSettingsHash, openBanner, openLayer } from "./store.js";
 
   function hashChangeHandler() {
     if (window.location.hash === $openSettingsHash) {
@@ -22,6 +23,23 @@
       openLayer();
     });
   }
+
+  // Scroll behavior (Banner opens not immediately but after scroll limit is reached.)
+  if ( $isUpdateRequired ) {
+    const scrollHeight = Math.min($scrollLimit, (document.documentElement.scrollHeight - document.documentElement.clientHeight));
+    if ( scrollHeight <= 0 ) {
+      openBanner();
+    } else {
+      let load = debounce(() => {
+        if (document.body.scrollTop >= scrollHeight || document.documentElement.scrollTop >= scrollHeight) {
+          openBanner();
+          window.removeEventListener('scroll', load);
+        }
+      }, 100)
+      window.addEventListener('scroll', load);
+    }
+  }
+
 </script>
 
 <div class="cookiesjsr--app">

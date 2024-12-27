@@ -5,7 +5,9 @@ import scs from "./services/StoreCookieService";
 const groups = conf.getServiceGroups();
 const active = Object.keys(groups).length ? Object.keys(groups).shift(): '';
 // State
-export const bannerVisible = writable(scs.isUpdateRequired());
+export const isUpdateRequired = writable(scs.isUpdateRequired());
+export const scrollLimit = writable(conf.get('config.library.scrollLimit', 0));
+export const bannerVisible = writable(false);
 export const cookieDocs = writable(conf.get('config.interface.cookieDocs',true));
 export const defaultLang = writable(conf.get('config.interface.defaultLang','en'));
 export const denyAllOnLayerClose = writable(conf.get('config.interface.denyAllOnLayerClose',false));
