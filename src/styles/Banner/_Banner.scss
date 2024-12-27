@@ -2,31 +2,29 @@
 
 .cookiesjsr-banner {
   position: fixed;
-  z-index: 10000;
-  left: 0;
-  bottom: 0;
+  z-index: 100;
+  right: 1em;
+  bottom: 1em;
+  width: 420px;
   height: auto;
-  width: 100vw;
+  max-width: calc(100vw - 2em);
+  max-height: calc(100vh - 2em);
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  box-shadow: var(--banner-box-shadow, v.$box-shadow);
 
   padding: 1em;
   background-color: var(--banner-bg-color, v.$color-4);
   color: var(--banner-font-color, v.$color-1);
-  max-height: calc(100vh - #{v.$banner-logo-offset});
   overflow: auto;
   transform: translateY(100%);
   transition: transform .3s ease-in-out;
 
   &.active {
     transform: translateY(0);
-  }
-
-  @media (min-width: 768px) {
-    flex-direction: row;
   }
 
   a {
@@ -36,20 +34,12 @@
   &--info,
   &--action {
     width: 100%;
-    @media (min-width: v.$md) {
-      width: 50%;
-    }
   }
 
   &--info {
-    padding: 0 var(--default-margin, v.$default-margin);
     margin-bottom: var(--default-margin, v.$default-margin);
     max-height: calc(100vh - 100px - #{v.$default-margin-doubled});
     overflow: auto;
-  }
-
-  &--text {
-    display: block;
   }
 
   &--links {
@@ -59,18 +49,20 @@
 
   &--action {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 0;
-
-    @media (min-width: v.$xl) {
-      flex-direction: row;
-    }
-
   }
 
   button {
-    &.denyAll {
+    &.cookiesjsr-settings,
+    &.denyAll,
+    &.allowAll{
       display: inline-block;
+      white-space: wrap;
+      width: auto;
+      padding: 0 .5em;
     }
   }
 

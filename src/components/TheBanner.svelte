@@ -28,8 +28,7 @@
 
 <div class="cookiesjsr-banner { $bannerVisible ? 'active' : ''}">
   <div class="cookiesjsr-banner--info">
-    <span class="cookiesjsr-banner--text">{@html t('bannerText')}</span>
-    <BaseLinks links={links} classes="cookiesjsr-banner--links" direction="row"/>
+    {@html t('bannerText')}
   </div>
 
   <div class="cookiesjsr-banner--action">
@@ -41,4 +40,6 @@
     {/if}
     <SetAllServices btnType="important allowAll" setAll={true}>{t('acceptAll')}</SetAllServices>
   </div>
+
+  <BaseLinks links={links} classes="cookiesjsr-banner--links" direction="row"/>
 </div>
