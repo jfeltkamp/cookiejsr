@@ -5,7 +5,8 @@
 @use "Services/Service";
 
 .cookiesjsr-layer {
-  display: block;
+  display: flex;
+  flex-direction: column;
   position: fixed;
   left: 50%;
   top: 50%;
@@ -16,39 +17,40 @@
   width: 100vw;
   max-width: 100%;
   z-index: 314160;
-  padding: var(--layer-header-height, v.$layer-header-height) 0 var(--layer-footer-height, v.$layer-footer-height);
   overflow: hidden;
   line-height: 1.5em;
 
-
-  @media (min-height: v.$h-sm) { height: 80vh; max-height: 575px}
-  @media (min-height: v.$h-md) { height: 60vh; }
+  @media (min-height: v.$h-sm) {
+    height: 80vh;
+    max-height: 575px;
+  }
+  @media (min-height: v.$h-md) {
+    height: 60vh;
+  }
 
   @media (min-width: v.$md) {
     width: 860px;
   }
 
-  &--overlay {
+  &-overlay {
     position: fixed;
     z-index: 314159;
     height: 100vh;
     width: 100vw;
     left: 0;
     top: 0;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
     border: 0;
   }
 
-  &--header {
-    position: absolute;
-    left: 0;
-    top: 0;
+  &__header {
+    flex: 0 0 auto;
     z-index: 100;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #FFF;
+    background-color: #fff;
     margin: 0;
     background: var(--layer-header-bg-color, v.$color-1);
     padding: 0 var(--default-margin, v.$default-margin);
@@ -56,16 +58,18 @@
     height: 3.5em;
   }
 
-  &--title {
+  &__title {
     color: var(--layer-header-font-color, v.$color-5);
     text-transform: uppercase;
   }
 
-  &--close {
+  &__close {
     z-index: 102;
     width: 1em;
     height: 1em;
-    background: transparent url("data:image/svg+xml,%0A%3Csvg width='27px' height='27px' viewBox='0 0 27 27' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Welcome' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='tarte-close' transform='translate(-1264.000000, -2628.000000)' fill='%23000f37'%3E%3Cg id='Group-2' transform='translate(155.000000, 2591.000000)'%3E%3Cg id='Group-3-Copy-2'%3E%3Cpolygon id='Page-1' points='1133.26296 37 1122.50065 47.762319 1111.73704 37 1109 39.7370358 1119.76361 50.5006452 1109 61.2629642 1111.73704 64 1122.50065 53.2363906 1133.26296 64 1136 61.2629642 1125.23768 50.5006452 1136 39.7370358'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E") no-repeat center center scroll;
+    background: transparent
+      url("data:image/svg+xml,%0A%3Csvg width='27px' height='27px' viewBox='0 0 27 27' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Welcome' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='tarte-close' transform='translate(-1264.000000, -2628.000000)' fill='%23000f37'%3E%3Cg id='Group-2' transform='translate(155.000000, 2591.000000)'%3E%3Cg id='Group-3-Copy-2'%3E%3Cpolygon id='Page-1' points='1133.26296 37 1122.50065 47.762319 1111.73704 37 1109 39.7370358 1119.76361 50.5006452 1109 61.2629642 1111.73704 64 1122.50065 53.2363906 1133.26296 64 1136 61.2629642 1125.23768 50.5006452 1136 39.7370358'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+      no-repeat center center scroll;
     background-size: contain;
     text-indent: -999em;
     overflow: hidden;
@@ -76,23 +80,17 @@
     -moz-appearance: none;
   }
 
-  &--body {
-    position: absolute;
-    left: 0;
-    right: 0;
+  &__body {
+    flex: 1 1 auto;
+    min-height: 0;
+    position: relative;
     background: var(--layer-body-bg-color, v.$color-1);
-    top: var(--layer-header-height, v.$layer-header-height);
-    bottom: var(--layer-footer-height, v.$layer-footer-height);
-
   }
 
-  &--footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  &__footer {
+    flex: 0 0 auto;
     width: 100%;
     padding: 0 var(--default-margin, v.$default-margin);
-    height: var(--layer-footer-height, v.$layer-footer-height);
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -104,7 +102,7 @@
     }
   }
 
-  &--label-all {
+  &__label-all {
     color: var(--layer-footer-font-color, v.$color-5);
     display: none;
     @media (min-width: v.$md) {
@@ -114,7 +112,7 @@
     }
   }
 
-  &--actions {
+  &__actions {
     display: flex;
     align-items: center;
     margin: 0 -#{v.$default-margin-half};
@@ -123,7 +121,6 @@
       width: calc(70% + #{v.$default-margin-half});
     }
   }
-
 
   button {
     &.denyAll,

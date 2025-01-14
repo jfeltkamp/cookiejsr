@@ -1,10 +1,10 @@
 @use "./vars" as v;
-@use './UI/Button';
-@use './UI/Links';
-@use './UI/SetAllServices';
-@use './UI/Switch';
-@use './Banner/Banner';
-@use './Layer/Layer';
+@use "./UI/Button";
+@use "./UI/Links";
+@use "./UI/SetAllServices";
+@use "./UI/Switch";
+@use "./Banner/Banner";
+@use "./Layer/Layer";
 
 #cookiesjsr {
   z-index: 100;
@@ -32,7 +32,6 @@
   --banner-font-color: #{v.$color-1};
   --banner-box-shadow: #{v.$box-shadow};
 
-  --layer-header-height: #{v.$layer-header-height};
   --layer-header-bg-color: #{v.$color-1};
   --layer-header-font-color: #{v.$color-5};
   --layer-body-bg-color: #{v.$color-1};
@@ -47,7 +46,6 @@
   --layer-border-color: #{v.$color-2};
   --layer-footer-bg-color: #{v.$color-1};
   --layer-footer-font-color: #{v.$color-5};
-  --layer-footer-height: #{v.$layer-footer-height};
 
   --switch-border-color: #{v.$color-2};
   --switch-handle-color: #{v.$color-1};
@@ -65,8 +63,9 @@
 
 body .cookiesjsr--app {
   &,
-  *, *:before, *:after {
+  *,
+  *:before,
+  *:after {
     box-sizing: border-box;
   }
 }
-

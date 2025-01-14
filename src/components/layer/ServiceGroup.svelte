@@ -8,8 +8,8 @@
   export let services = [];
 </script>
 
-<li class="cookiesjsr-service-group { id === $activeGroup ? 'active' : '' }">
-  <button class="cookiesjsr-service-group--tab" role="tab"
+<li class="cookiesjsr-service-group { id === $activeGroup ? 'cookiesjsr-service-group--active' : '' }">
+  <button class="cookiesjsr-service-group__tab" role="tab"
     id="tab-{ id }"
     aria-selected="{id === $activeGroup ? 'true' : 'false'}"
     tabIndex="{id === $activeGroup ? '0' : '-1' }"
@@ -18,15 +18,15 @@
   >
     { t(id + '.title') }
   </button>
-  <div class="cookiesjsr-service-group--content"
+  <div class="cookiesjsr-service-group__content"
        id="panel-{ id }"
        role="tabpanel"
        aria-labelledby="tab-{ id }"
        hidden="{ id !== $activeGroup }">
-    <div class="cookiesjsr-service-group--intro">
+    <div class="cookiesjsr-service-group__intro">
       {@html t(id + '.details') }
     </div>
-    <ul class="cookiesjsr-service-group--services">
+    <ul class="cookiesjsr-service-group__services">
       {#if $groupConsent}
         <GroupConsent gid={id} title={id + '.title'} />
       {:else}

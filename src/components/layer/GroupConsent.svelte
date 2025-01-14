@@ -36,18 +36,18 @@
 </script>
 
 <li class="cookiesjsr-service group-{gid}">
-  <div class="cookiesjsr-service--description">
+  <div class="cookiesjsr-service__description">
     <h3>{ t(header) }</h3>
-    <BaseLinks links={links} class="cookiesjsr-service--links" direction="row"/>
+    <BaseLinks links={links} class="cookiesjsr-service__links" direction="row"/>
   </div>
-  <div class="cookiesjsr-service--action">
+  <div class="cookiesjsr-service__action">
     {#if groupNeedConsent}
       <TheSwitch
         title={$services[gid] ? t('allowed') : t('denied') }
         activated={groupIsEnabled}
         changed={setConsent} />
     {:else}
-      <div class="cookiesjsr-service--always-on">
+      <div class="cookiesjsr-service__always-on">
         <span>{t('alwaysActive')}</span>
       </div>
     {/if}

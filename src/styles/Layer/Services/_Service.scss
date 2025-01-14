@@ -4,12 +4,12 @@
   display: flex;
   align-items: center;
   background-color: rgba(v.$color-2, 0);
-  transition: background-color .3s ease;
+  transition: background-color 0.3s ease;
   &:hover {
-    background-color: rgba(v.$color-2, .1);
+    background-color: rgba(v.$color-2, 0.1);
   }
 
-  &--description {
+  &__description {
     padding: #{v.$default-margin-half} #{v.$default-margin};
     width: calc(100% - #{v.$default-margin-doubled} - #{v.$switch-width});
 
@@ -21,23 +21,25 @@
     }
   }
 
-  &--links {
+  &__links {
     a {
       color: var(--layer-font-light, v.$color-1);
-      font-size: .75em;
+      font-size: 0.75em;
 
-      &:hover, &:active, &:visited {
+      &:hover,
+      &:active,
+      &:visited {
         color: var(--layer-font-light, v.$color-1);
       }
     }
   }
 
-  &--action {
+  &__action {
     padding: #{v.$default-margin-half} #{v.$default-margin};
     width: calc(#{v.$default-margin-doubled} + #{v.$switch-width});
   }
 
-  &--always-on {
+  &__always-on {
     color: var(--switch-always-on-font-color, v.$color-3);
     text-align: right;
     display: flex;
@@ -45,7 +47,7 @@
     white-space: nowrap;
     span {
       background-color: var(--switch-always-on-bg-color, v.$color-1);
-      padding: 0 .5em;
+      padding: 0 0.5em;
     }
   }
 }

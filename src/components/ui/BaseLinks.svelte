@@ -4,7 +4,7 @@
   export let direction = '';
 </script>
 
-<ul class="cookiesjsr-links {classes} {direction === 'row' ? 'links--row' : ''}">
+<ul class="cookiesjsr-links {classes} {direction === 'row' ? 'cookiesjsr-links--row' : ''}">
   {#each links as link, index}
     <li>
       <a
