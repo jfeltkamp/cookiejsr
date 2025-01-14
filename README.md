@@ -88,7 +88,7 @@ can find their config file. ([Documentation](#base-config))
 ([Further best practices](#service-activation))
 
 ````js
-// Base configuration 
+// Base configuration
 document.cookiesjsr = {
    apiUrl: '',
    configQuery: '/path/to/your/cookiesjsr-config.json'
@@ -240,7 +240,7 @@ the default language of the browser is determining.
 ## <a name="base-config"></a>Base Config
 Content of your ```cookiesjsr-init.js```:
 ````js
-// Base configuration 
+// Base configuration
 document.cookiesjsr = {
    apiUrl: '',
    configQuery: '/path/to/your/cookiesjsr-config.json'
@@ -397,7 +397,6 @@ inline-styles.
       --banner-bg-color: #004c93;
       --banner-font-color: #FFF;
 
-      --layer-header-height: 3.5em;
       --layer-header-bg-color: #FFF;
       --layer-header-font-color: #000f37;
       --layer-body-bg-color: #FFF;
@@ -411,7 +410,6 @@ inline-styles.
       --layer-border-color: #e4e5e6;
       --layer-footer-bg-color: #FFF;
       --layer-footer-font-color: #000f37;
-      --layer-footer-height: 4.5em;
 
       --switch-border-color: #e4e5e6;
       --switch-handle-color: #FFF;

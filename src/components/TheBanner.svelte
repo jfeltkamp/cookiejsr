@@ -26,12 +26,12 @@
   const links = computeLinks();
 </script>
 
-<div class="cookiesjsr-banner { $bannerVisible ? 'active' : ''}">
-  <div class="cookiesjsr-banner--info">
+<div class="cookiesjsr-banner { $bannerVisible ? 'cookiesjsr-banner--active' : ''}">
+  <div class="cookiesjsr-banner__info">
     {@html t('bannerText')}
   </div>
 
-  <div class="cookiesjsr-banner--action">
+  <div class="cookiesjsr-banner__action">
     {#if !$settingsAsLink}
       <BaseButton btnType="cookiesjsr-settings" clicked={() => openLayer()}>{t('settings')}</BaseButton>
     {/if}
@@ -41,5 +41,5 @@
     <SetAllServices btnType="important allowAll" setAll={true}>{t('acceptAll')}</SetAllServices>
   </div>
 
-  <BaseLinks links={links} classes="cookiesjsr-banner--links" direction="row"/>
+  <BaseLinks links={links} classes="cookiesjsr-banner__links" direction="row"/>
 </div>

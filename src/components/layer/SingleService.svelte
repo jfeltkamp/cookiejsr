@@ -26,18 +26,18 @@
 </script>
 
 <li class="cookiesjsr-service">
-  <div class="cookiesjsr-service--description">
+  <div class="cookiesjsr-service__description">
     <h3>{ service.name }</h3>
-    <BaseLinks links={links} class="cookiesjsr-service--links" direction="row"/>
+    <BaseLinks links={links} class="cookiesjsr-service__links" direction="row"/>
   </div>
-  <div class="cookiesjsr-service--action">
+  <div class="cookiesjsr-service__action">
     {#if service.needConsent}
       <TheSwitch
         title={$services[service.key] ? t('allowed') : t('denied')}
         activated={$services[service.key]}
         changed={setConsent} />
     {:else}
-      <div class="cookiesjsr-service--always-on">
+      <div class="cookiesjsr-service__always-on">
         <span>{t('alwaysActive')}</span>
       </div>
     {/if}
