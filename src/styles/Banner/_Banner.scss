@@ -21,9 +21,9 @@
   color: var(--banner-font-color, v.$color-1);
   overflow: auto;
   transform: translateY(100%);
-  transition: transform .3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 
-  &.active {
+  &--active {
     transform: translateY(0);
   }
 
@@ -31,23 +31,23 @@
     color: var(--link-list-font-color, v.$color-1);
   }
 
-  &--info,
-  &--action {
+  &__info,
+  &__action {
     width: 100%;
   }
 
-  &--info {
+  &__info {
     margin-bottom: var(--default-margin, v.$default-margin);
     max-height: calc(100vh - 100px - #{v.$default-margin-doubled});
     overflow: auto;
   }
 
-  &--links {
-    margin-top: .5em;
-    font-size: .85em;
+  &__links {
+    margin-top: 0.5em;
+    font-size: 0.85em;
   }
 
-  &--action {
+  &__action {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -58,12 +58,11 @@
   button {
     &.cookiesjsr-settings,
     &.denyAll,
-    &.allowAll{
+    &.allowAll {
       display: inline-block;
       white-space: wrap;
       width: auto;
-      padding: 0 .5em;
+      padding: 0 0.5em;
     }
   }
-
 }

@@ -45,7 +45,7 @@
     function tabCycle(event) {
         if (event.key === 'Tab') {
             const selector = (event.shiftKey) ? '.dialog-last-tab' : '.dialog-first-tab';
-            let isIn = document.querySelector('.cookiesjsr-layer--wrapper').contains(document.activeElement);
+            let isIn = document.querySelector('.cookiesjsr-layer-wrapper').contains(document.activeElement);
             if (!isIn) {
                 let activeElement = document.querySelector(selector)
                 if (activeElement) {
@@ -75,20 +75,20 @@
     });
 </script>
 
-<div class="cookiesjsr-layer--wrapper">
-    <button class="cookiesjsr-layer--overlay" title={t('close')} on:click={closeLayer} aria-label="Closimg overlay" ></button>
+<div class="cookiesjsr-layer-wrapper">
+    <button class="cookiesjsr-layer-overlay" title={t('close')} on:click={closeLayer} aria-label="Closimg overlay" ></button>
     <div class="cookiesjsr-layer">
-        <header class="cookiesjsr-layer--header">
-            <span class="cookiesjsr-layer--title">{t('cookieSettings')}</span>
-            <button type="button" class="cookiesjsr-layer--close dialog-first-tab" title={t('close')}
+        <header class="cookiesjsr-layer__header">
+            <span class="cookiesjsr-layer__title">{t('cookieSettings')}</span>
+            <button type="button" class="cookiesjsr-layer__close dialog-first-tab" title={t('close')}
                     on:click={closeLayerDeny}>{t('close')}</button>
         </header>
-        <div class="cookiesjsr-layer--body">
+        <div class="cookiesjsr-layer__body">
             <ServiceGroups/>
         </div>
-        <footer class="cookiesjsr-layer--footer">
-            <div class="cookiesjsr-layer--label-all">{t('settingsAllServices')}</div>
-            <div class="cookiesjsr-layer--actions">
+        <footer class="cookiesjsr-layer__footer">
+            <div class="cookiesjsr-layer__label-all">{t('settingsAllServices')}</div>
+            <div class="cookiesjsr-layer__actions">
                 {#if $showDenyAll}
                     <SetAllServices btnType="invert denyAll" setAll={false}>{t('denyAll')}</SetAllServices>
                 {/if}

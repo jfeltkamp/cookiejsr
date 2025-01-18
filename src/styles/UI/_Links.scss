@@ -2,7 +2,7 @@
 
 .cookiesjsr-links {
   list-style: none;
-  margin: 0 -.75em;
+  margin: 0 -0.75em;
   padding: 0;
   display: flex;
   flex-direction: row;
@@ -10,12 +10,11 @@
   justify-content: left;
   align-items: center;
 
-  &.links--row {
-
+  &--row {
     li {
       margin: 0;
-      padding-left: .75em;
-      padding-right: .75em;
+      padding-left: 0.75em;
+      padding-right: 0.75em;
       position: relative;
 
       a {
@@ -25,18 +24,18 @@
         display: inline-block;
       }
 
-      &:last-child:before {
+      &:last-child::before {
         content: none;
       }
 
-      &:before {
-        content: '';
+      &::before {
+        content: "";
         position: absolute;
         top: 50%;
         right: 0;
-        width: .3em;
-        height: .3em;
-        background-color: var(--link-list-separator-color, #FFF);
+        width: 0.3em;
+        height: 0.3em;
+        background-color: var(--link-list-separator-color, #fff);
         transform: translate(50%, -40%);
       }
     }
